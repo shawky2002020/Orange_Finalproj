@@ -3,7 +3,7 @@ pipeline {
     environment {
         GITHUB_CREDENTIALS = 'github-credentials'  // Replace with your GitHub credentials ID
         DOCKERHUB_CREDENTIALS = 'dockerhub-credentials-id' // Replace with your Docker Hub credentials ID
-        DOCKER_IMAGE = 'shawky2002020/final_proj:latest' // Replace with your Docker image name
+        DOCKER_IMAGE = 'shawky2002/final_proj:latest' // Replace with your Docker image name
         INVENTORY_FILE = './hosts.ini' // Path to your inventory file
         PLAYBOOK_FILE = './docker_setup.yml' // Path to your Ansible playbook
     }
