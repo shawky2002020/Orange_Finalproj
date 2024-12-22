@@ -1,4 +1,6 @@
 # Orange Final Task
+![Orange logo](https://github.com/user-attachments/assets/0f4de733-d488-4365-8c64-995965071f26)
+
 
 # Web Application CI Pipeline with Docker and Jenkins
 
