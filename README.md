@@ -10,15 +10,13 @@ This project demonstrates a Continuous Integration (CI) pipeline that automates 
 
 The goal of this project is to create an automated CI/CD pipeline that integrates several tools to streamline the build and deployment process for a simple web application. The core components of the pipeline include:
 
-1. **GitHub Repository**: The Python-based web application code is stored in a private GitHub repository.
-2. **Docker**: The application is containerized using Docker, ensuring that it runs consistently across all environments.
-3. **Jenkins**: Jenkins automates the build process by pulling the code from GitHub, building the Docker image, and pushing it to Docker Hub.
-4. **Vagrant & VirtualBox**: Two VMs are provisioned using Vagrant with low specs (1 CPU, 512 MB of memory).
-5. **Ansible**: An Ansible playbook is used to install Docker on the VMs, pull the Docker image from Docker Hub, and run the container on each machine.
+1. **Docker**: The application is containerized using Docker, ensuring that it runs consistently across all environments.
+2. **Jenkins**: Jenkins automates the build process by pulling the code from GitHub, building the Docker image, and pushing it to Docker Hub.
+3. **Vagrant & VirtualBox**: Two VMs are provisioned using Vagrant with low specs (1 CPU, 512 MB of memory).
+4. **Ansible**: An Ansible playbook is used to install Docker on the VMs, pull the Docker image from Docker Hub, and run the container on each machine.
 
 ## What I Built
 
-- **GitHub Repository**: I set up a private repository to store the Python web application code.
   
 - **Dockerfile**: I wrote a Dockerfile to containerize the Python web application, making it easy to deploy anywhere.
 
