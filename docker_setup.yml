@@ -22,7 +22,7 @@
 
     - name: Add Docker APT repository
       apt_repository:
-        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
         state: present
 
     - name: Install Docker
@@ -45,14 +45,13 @@
 
     - name: Pull Docker image from Docker Hub
       docker_image:
-        name: shawky2002020/final_proj
+        name: shawky2002/final_proj
         source: pull
 
     - name: Run Docker container
       docker_container:
         name: app-container
-        image: shawky2002020/final_proj
+        image: shawky2002/final_proj
         state: started
         ports:
           - "80:80"
-
