@@ -40,7 +40,7 @@ This CI/CD pipeline allows the application to be built, containerized, and deplo
 
 This project integrates modern DevOps tools to provide an automated solution for building and deploying a simple web application. The CI pipeline helps maintain consistency across environments and simplifies the deployment process, making it easier to manage updates and rollbacks.
 
-##Photos
+## Photos
 ![Docker_Hub](https://github.com/user-attachments/assets/7ed35fc2-67b2-43a0-8bd2-494a99300e0b)
 ![Jenkins](https://github.com/user-attachments/assets/93896fe5-c28b-4a6d-9e01-08af392f170c)
 
