@@ -4,13 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styles */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Links Styles */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 10px 5px;
+            font-size: 1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Weather App</h1>
-    <form action="/add_city" method="POST">
-        <input type="text" name="city" placeholder="Enter city name" required>
-        <button type="submit">Add City</button>
-    </form>
-    <a href="/weather">View Weather Data</a> | <a href="/plot">View Temperature Plot</a>
+    <div>
+        <h1>Weather App</h1>
+        <form action="/add_city" method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Add City</button>
+        </form>
+        <div style="text-align: center;">
+            <a href="/weather">View Weather Data</a> | <a href="/plot">View Temperature Plot</a>
+        </div>
+    </div>
 </body>
 </html>
