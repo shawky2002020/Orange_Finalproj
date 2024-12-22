@@ -1,0 +1,58 @@
+---
+- name: Install Docker on Target VMs, pull image, and run container
+  hosts: all
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Install prerequisites
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+        update_cache: yes
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker APT repository
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: yes
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add user 'vagrant' to Docker group
+      user:
+        name: vagrant
+        groups: docker
+        append: yes
+
+    - name: Pull Docker image from Docker Hub
+      docker_image:
+        name: shawky2002020/final_proj
+        source: pull
+
+    - name: Run Docker container
+      docker_container:
+        name: app-container
+        image: shawky2002020/final_proj
+        state: started
+        ports:
+          - "80:80"
+
