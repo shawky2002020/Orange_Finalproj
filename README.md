@@ -1,52 +1,95 @@
 # Orange Final Task
-![Orange logo](https://github.com/user-attachments/assets/21bac1d4-ead6-48e6-b61e-967bd2b6149e)
- Project
 
 # Web Application CI Pipeline with Docker and Jenkins
 
-This project demonstrates a Continuous Integration (CI) pipeline that automates the deployment of a simple Python-based web application using Docker, Jenkins, and Ansible. The pipeline builds, pushes, and deploys the application to two virtual machines managed via Vagrant. The deployment is fully automated with Docker containerization and Ansible playbooks.
+This project demonstrates a Continuous Integration (CI) pipeline that automates the deployment of a Python-based web application using Docker, Jenkins, and Ansible. The pipeline builds, pushes, and deploys the application to two virtual machines managed via Vagrant. The deployment is fully automated, leveraging Docker containerization and Ansible playbooks to ensure efficiency and consistency.
+
+---
 
 ## Project Overview
 
-The goal of this project is to create an automated CI/CD pipeline that integrates several tools to streamline the build and deployment process for a simple web application. The core components of the pipeline include:
+The goal of this project is to create an automated CI/CD pipeline that integrates several tools to streamline the build and deployment process for a Python web application. The core components of the pipeline include:
 
-1. **Docker**: The application is containerized using Docker, ensuring that it runs consistently across all environments.
-2. **Jenkins**: Jenkins automates the build process by pulling the code from GitHub, building the Docker image, and pushing it to Docker Hub.
-3. **Vagrant & VirtualBox**: Two VMs are provisioned using Vagrant with low specs (1 CPU, 512 MB of memory).
-4. **Ansible**: An Ansible playbook is used to install Docker on the VMs, pull the Docker image from Docker Hub, and run the container on each machine.
+1. **Docker**: Containerizes the application, ensuring consistent execution across all environments.
+2. **Jenkins**: Automates the build process by pulling code from GitHub, building the Docker image, and pushing it to Docker Hub.
+3. **Vagrant & VirtualBox**: Provisions two VMs with minimal resources (1 CPU, 512 MB of memory) to host the Docker containers.
+4. **Ansible**: Manages configuration and deployment, including installing Docker, pulling the image, and running the container.
 
-## What I Built
+---
 
-  
-- **Dockerfile**: I wrote a Dockerfile to containerize the Python web application, making it easy to deploy anywhere.
+## Key Deliverables
 
-- **Vagrant Setup**: I created two virtual machines using Vagrant with minimal resource allocation for running the Docker containers.
+- **Dockerfile**: A Dockerfile was created to containerize the Python application, making deployment seamless and environment-agnostic.
+- **Vagrant Configuration**: Two VMs were provisioned using Vagrant, each configured with minimal resource requirements.
+- **Jenkins Pipeline**: A Jenkins pipeline was developed to automate the steps of pulling code from GitHub, building the Docker image, and pushing it to Docker Hub.
+- **Ansible Playbook**: An Ansible playbook automates the installation of Docker, pulling of the Docker image from Docker Hub, and execution of the container on the VMs.
 
-- **Jenkins Pipeline**: I configured a Jenkins pipeline that automates the process of pulling code from GitHub, building the Docker image, and pushing it to Docker Hub.
+---
 
-- **Ansible Playbook**: I wrote an Ansible playbook that installs Docker on the VMs, pulls the Docker image from Docker Hub, and runs the container on both machines.
+## CI/CD Pipeline Workflow
 
-This CI/CD pipeline allows the application to be built, containerized, and deployed in a fully automated and repeatable manner.
+1. **Code Repository**:
+
+   - Code is hosted in a private GitHub repository, including the Python application and the Dockerfile.
+
+2. **Jenkins Automation**:
+
+   - Pulls the code from GitHub using an access token for authentication.
+   - Builds the Docker image using the provided Dockerfile.
+   - Pushes the Docker image to Docker Hub.
+   - Triggers the Ansible playbook to deploy the application.
+
+3. **Ansible Deployment**:
+
+   - Installs Docker on the two Vagrant VMs.
+   - Pulls the Docker image from Docker Hub.
+   - Runs the Docker container on both VMs.
+
+4. **Vagrant Infrastructure**:
+
+   - Two low-spec VMs serve as target hosts for the application’s deployment.
+
+---
+
+## Architecture Diagram
+
+![CI/CD Architecture Diagram](https://github.com/user-attachments/assets/68bbfc3d-3fd6-417d-9e0f-d7af0d4b93aa)
+
+---
 
 ## Key Features
 
-- **Automated Docker Builds**: The Docker image is automatically built whenever changes are pushed to the GitHub repository.
-- **Seamless Deployment**: The application is deployed to multiple VMs automatically using Ansible.
-- **End-to-End Automation**: From code push to deployment, the entire process is automated, reducing manual intervention and ensuring consistency.
+- **Automated Docker Builds**: Jenkins automatically builds the Docker image upon code updates in GitHub.
+- **Seamless Multi-Machine Deployment**: Ansible deploys the application across multiple VMs with minimal manual intervention.
+- **End-to-End Automation**: The pipeline automates the entire process, from code push to deployment, ensuring efficiency and reliability.
+- **Consistent Environments**: Docker ensures that the application behaves consistently across all target environments.
+
+---
+
+## Application
+
+
+
+https://github.com/user-attachments/assets/da8600f2-754f-4e84-a633-5a4a8b142e7c
+
+
+
+
+
+## Screenshots
+
+### Docker Hub Repository
+
+![Docker Hub](https://github.com/user-attachments/assets/7ed35fc2-67b2-43a0-8bd2-494a99300e0b)
+
+### Jenkins Pipeline
+
+![Jenkins Pipeline](https://github.com/user-attachments/assets/93896fe5-c28b-4a6d-9e01-08af392f170c)
+
+---
 
 ## Conclusion
 
-This project integrates modern DevOps tools to provide an automated solution for building and deploying a simple web application. The CI pipeline helps maintain consistency across environments and simplifies the deployment process, making it easier to manage updates and rollbacks.
-
-## Archeticture Diagram
-![CI/CD diagram](https://github.com/user-attachments/assets/68bbfc3d-3fd6-417d-9e0f-d7af0d4b93aa)
-
-  
-
-## Photos
-![Docker_Hub](https://github.com/user-attachments/assets/7ed35fc2-67b2-43a0-8bd2-494a99300e0b)
-![Jenkins](https://github.com/user-attachments/assets/93896fe5-c28b-4a6d-9e01-08af392f170c)
-
-
+This project integrates modern DevOps tools to deliver a streamlined, automated solution for building and deploying a Python web application. The CI pipeline minimizes manual effort, enhances consistency across environments, and simplifies the management of updates and rollbacks. This end-to-end automation showcases the power of combining Docker, Jenkins, Ansible, and Vagrant in a DevOps workflow.
 
 *This project was completed during my DevOps internship at Orange.*
